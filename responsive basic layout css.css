@@ -5,12 +5,16 @@ html{
 .main{
   height: 100%;
   display: grid;
-  grid-template-columns: 150px repeat(auto-fit,minmax(70px,1fr));
-  grid-template-rows: 100px 300px 500px 100px ;
+  /*grid-template-columns: 150px repeat(auto-fit,minmax(70px,1fr));*/
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 70px 200px 500px 200px 100px;
+  gap:0.6rem;
   grid-template-areas: "nav nav nav nav"
                         "banner banner banner banner"
-                        "leftbox content content content"
+                        "sidebar content content content"
+                        "sidebar content1 content2 content3"
                         "footer footer footer footer";
+
 }
 
 .nav{
@@ -22,8 +26,8 @@ html{
   background-color: burlywood;
 }
 
-.leftbox{
-  grid-area: leftbox;
+.sidebar{
+  grid-area: sidebar;
   background-color: darkcyan;
 }
 
@@ -31,6 +35,21 @@ html{
   grid-area: content;
   background-color: darkkhaki;
 }
+
+.content1{
+  grid-area: content1;
+  background-color: rgb(155, 223, 155);
+}
+.content2{
+  grid-area: content2;
+  background-color: rgb(132, 221, 233);
+}
+
+.content3{
+  grid-area: content3;
+  background-color: rgb(111, 130, 243);
+}
+
 .footer{
   grid-area: footer;
   background-color: darkslategray;
@@ -40,11 +59,13 @@ html{
   .main{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 200px 200px 500px 100px ;
-    grid-template-areas: "nav nav"
-                          "banner banner"
-                          "leftbox content"
-                          "footer footer";
+    grid-template-rows: 70px 200px 500px 300px 300px 100px ;
+    grid-template-areas:"nav nav"
+                        "banner banner "
+                         "sidebar content" 
+                         "sidebar content1" 
+                         "content2 content3"
+                         "footer footer";
   }
 }
 
@@ -52,11 +73,14 @@ html{
   .main{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 200px 200px 500px 100px ;
+    grid-template-rows: 70px 200px 200px 500px 300px 300px 300px 100px ;
     grid-template-areas: "nav"
                           "banner"
-                          "leftbox"
+                          "sidebar"
                           "content"
+                          "content1"
+                          "content2"
+                          "content3"
                           "footer";
   }
 }
