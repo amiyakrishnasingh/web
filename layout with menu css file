@@ -1,0 +1,123 @@
+
+html{
+  box-shadow: 13px 2px 2px 2px #232323;
+}
+.main{
+  height: 100%;
+  display: grid;
+  /*grid-template-columns: 150px repeat(auto-fit,minmax(70px,1fr));*/
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 70px 200px 500px 200px 100px;
+  gap:0.6rem;
+  grid-template-areas: "nav nav nav nav"
+                        "banner banner banner banner"
+                        "sidebar content content content"
+                        "sidebar content1 content2 content3"
+                        "footer footer footer footer";
+
+}
+
+
+.menu ul{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  list-style: none;
+  gap:10px;
+  margin-left: -28px;
+  margin-right: 13px;
+  justify-items: stretch;
+  margin-top: 10px;
+
+ 
+  
+  
+}
+.menu a{
+  text-transform: uppercase;
+  color: #232323;
+  background: cornflowerblue;
+  text-decoration: none;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  margin: auto;
+  text-align: center;
+  box-shadow: 0 1px 5px #dbe0db;
+  display: block;
+}
+
+
+
+
+
+.nav{
+  grid-area: nav;
+  background-color: aqua;
+}
+.banner{
+  grid-area: banner;
+  background-color: burlywood;
+}
+
+.sidebar{
+  grid-area: sidebar;
+  background-color: darkcyan;
+}
+
+.content{
+  grid-area: content;
+  background-color: darkkhaki;
+}
+
+.content1{
+  grid-area: content1;
+  background-color: rgb(155, 223, 155);
+}
+.content2{
+  grid-area: content2;
+  background-color: rgb(132, 221, 233);
+}
+
+.content3{
+  grid-area: content3;
+  background-color: rgb(111, 130, 243);
+}
+
+.footer{
+  grid-area: footer;
+  background-color: darkslategray;
+}
+
+@media(max-width:600px){
+  .main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 70px 200px 500px 300px 300px 100px ;
+    grid-template-areas:"nav nav"
+                        "banner banner "
+                         "sidebar content" 
+                         "sidebar content1" 
+                         "content2 content3"
+                         "footer footer";
+  }
+}
+
+@media(max-width:480px){
+  .main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 200px 200px 500px 300px 300px 300px 100px ;
+    grid-template-areas: "nav"
+                          "banner"
+                          "sidebar"
+                          "content"
+                          "content1"
+                          "content2"
+                          "content3"
+                          "footer";
+  }
+
+  .menu ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
